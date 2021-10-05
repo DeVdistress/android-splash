@@ -16,3 +16,4 @@ local.properties
 /gradle
 /app/libs
 /.idea
+/app/proguard-rules.pro
