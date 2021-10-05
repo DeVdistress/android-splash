@@ -17,3 +17,9 @@ local.properties
 /app/libs
 /.idea
 /app/proguard-rules.pro
+/jdks
+/native
+/wrapper
+/daemon
+/.tmp
+/caches
