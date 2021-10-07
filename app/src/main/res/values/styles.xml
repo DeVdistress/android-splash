@@ -27,17 +27,6 @@
 			<item name="android:dialogTheme">@style/AlertDialogDark</item>
 			<item name="android:alertDialogTheme">@style/AlertDialogDark</item>
 	</style>
-
-	<style name="AlertDialogDark_two" parent="@android:style/Theme.Dialog">
-		<item name="android:windowBackground">@android:color/transparent</item>
-		<item name="android:textColor">@android:color/white</item>
-		<item name="android:textStyle">bold</item>
-		<item name="android:headerDividersEnabled">true</item>
-		<item name="android:typeface">normal</item>
-		<item name="android:background">@color/primary_dark_material_dark</item>
-		<item name="android:alpha">0.95</item>
-	</style>
-
 	<style name="AlertDialogDark" parent="Theme.AppCompat.Light.Dialog.Alert">
 		<item name="android:textColorPrimary">@android:color/white</item>
 		<!-- Used for the background -->
@@ -62,6 +51,15 @@
 		<item name="android:scrollHorizontally">true</item>
 		<item name="android:textSize">18sp</item>
 		<item name="android:textStyle">bold</item>
+	</style>
+	<style name="AlertDialogDark_two" parent="@android:style/Theme.Dialog">
+		<item name="android:windowBackground">@android:color/transparent</item>
+		<item name="android:textColor">@android:color/white</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:headerDividersEnabled">true</item>
+		<item name="android:typeface">normal</item>
+		<item name="android:background">@color/primary_dark_material_dark</item>
+		<item name="android:alpha">0.95</item>
 	</style>
 </resources>
 

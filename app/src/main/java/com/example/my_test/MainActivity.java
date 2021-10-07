@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity  {
 
     private void startSplash() {
         if (splash == null && was_started) {
-            splash = new SplashDownloader(this, findViewById(R.id.imageView), R.raw.ui_intro_splash_screen);
+            splash = new SplashDownloader(this, findViewById(R.id.imageView), R.raw.ui_intro_splash_screen, R.drawable.tfa);
             splash.start();
             btn.setText("stop");
         }

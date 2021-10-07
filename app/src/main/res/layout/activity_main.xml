@@ -90,8 +90,8 @@
                 android:rotationX="0"
                 android:rotationY="0"
                 android:scaleX="1"
-                android:scaleY="1"
-                app:srcCompat="@drawable/tfa" />
+                android:scaleY="1" />
+               <!-- app:srcCompat="@drawable/tfa" /> -->
 
             <Button
                 android:id="@+id/button"
