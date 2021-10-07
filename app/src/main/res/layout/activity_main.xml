@@ -106,18 +106,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="35dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
                 android:progressBackgroundTint="#82e9de"
                 android:progressTint="#82e9de"
-                android:scaleY="3" />
+                android:scaleY="4" />
 
             <TextView
                 android:id="@+id/progressAsPercentage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@+id/progressBar"
+                android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:text="0%"
                 android:textStyle="bold" />
@@ -126,24 +126,25 @@
                 android:id="@+id/progressAsFraction"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="10dp"
-                android:text="0MB / 0MB"></TextView>
+                android:layout_above="@+id/progressBar"
+                android:text="0MB / 0MB"/>
 
             <TextView
                 android:id="@+id/progressAverageSpeed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/progressBar"
-                android:layout_alignLeft="@+id/progressBar" />
+                android:layout_alignLeft="@+id/progressBar"
+                android:text="aaaaMB / aaaaaMB"/>
 
             <TextView
                 android:id="@+id/progressTimeRemaining"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/progressBar"
-                android:layout_alignRight="@+id/progressBar" />
+                android:layout_alignRight="@+id/progressBar"
+                android:text="bbbbMB / bbbbMB"/>
         </RelativeLayout>
 
         <LinearLayout
