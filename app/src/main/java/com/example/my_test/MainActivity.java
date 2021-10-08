@@ -165,11 +165,17 @@ public class MainActivity extends AppCompatActivity  {
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder( this );
         alertDialogBuilder.setTitle( "Error" );
         alertDialogBuilder.setMessage( aMessage );
-        alertDialogBuilder.setCancelable(false );
-        alertDialogBuilder.setPositiveButton("Exit", new DialogInterface.OnClickListener() {
+        //alertDialogBuilder.setCancelable(false);
+        alertDialogBuilder.setNegativeButton("Try again", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
+            }
+        });
+        alertDialogBuilder.setPositiveButton("Exit", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                System.exit(0);
             }
         });
         alertDialogBuilder.show();

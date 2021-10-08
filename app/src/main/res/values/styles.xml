@@ -41,7 +41,15 @@
 	<style name="MyBorderlessButton"  parent="@android:style/Widget.Button.Small">
 		<!-- Set background drawable and text size of the buttons here -->
 		<item name="android:background">@android:color/darker_gray</item>
+		<item name="android:paddingBottom">5dp</item>
+		<item name="android:paddingTop">5dp</item>
+		<item name="android:paddingLeft">10dp</item>
+		<item name="android:paddingRight">10dp</item>
 		<item name="android:textSize">30sp</item>
+		<item name="android:layout_marginLeft">0dp</item>
+		<item name="android:layout_marginRight">0dp</item>
+		<item name="android:layout_marginBottom">0dp</item>
+		<item name="android:layout_marginTop">0dp</item>
 		<item name="android:textStyle">bold</item>
 		<item name="android:scaleX">0.6</item>
 		<item name="android:scaleY">0.6</item>
