@@ -20,6 +20,7 @@ public class SplashDownloader extends Thread implements MediaPlayer.OnCompletion
     View my_view = null;
     boolean tr = false;
     MediaPlayer m_player = null;
+    Point vSize = null;
 
     public SplashDownloader(Context cnt, View view, int id_music, int id_pic) {
         my_view = view;
@@ -28,7 +29,7 @@ public class SplashDownloader extends Thread implements MediaPlayer.OnCompletion
 
         if(view != null) {
             Bitmap pic = BitmapFactory.decodeResource(cnt.getResources(), id_pic);
-            Point vSize = new Point();
+            vSize = new Point();
             WindowManager vWindow = ((Activity)cnt).getWindowManager();
             Display vDisplay = vWindow.getDefaultDisplay();
             vDisplay.getSize(vSize);
@@ -78,7 +79,14 @@ public class SplashDownloader extends Thread implements MediaPlayer.OnCompletion
 
     private void doItAgain() {
         if (!tr) {
-            float sc = (float)randInt(2,6);
+            float sc = 0.f;
+
+            if ( vSize.x > 2000) {
+                sc = (float) randInt(2, 6);
+            } else {
+                sc = (float) randInt(2, 4);
+            }
+
             my_view.animate().setDuration(randInt(2000,10000));
             my_view.animate().scaleX(sc);
             my_view.animate().scaleY(sc);
