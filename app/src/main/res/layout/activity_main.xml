@@ -31,15 +31,15 @@
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyleHorizontal"
-            android:indeterminateTintMode="src_atop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="150dp"
-            android:layout_marginTop="300dp"
+            android:layout_marginTop="270dp"
             android:layout_marginRight="150dp"
-            android:progressBackgroundTint="#ffffff"
-            android:background="@android:color/transparent"
             android:alpha="0.95"
+            android:background="@android:color/transparent"
+            android:indeterminateTintMode="src_atop"
+            android:progressBackgroundTint="#ffffff"
             android:progressTint="#00b7ff"
             android:scaleY="5" />
 
