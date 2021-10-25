@@ -79,13 +79,15 @@ public class SplashDownloader extends Thread implements MediaPlayer.OnCompletion
 
     private void doItAgain() {
         if (!tr) {
+            /*
             float sc = 0.f;
-
             if ( vSize.x > 2000) {
-                sc = (float) randInt(2, 6);
+                sc = (float) randInt(2, 4);
             } else {
                 sc = (float) randInt(2, 4);
             }
+            */
+            float sc = ((float) randInt(0, 40))/20.0f + 1.0f;
 
             my_view.animate().setDuration(randInt(2000,10000));
             my_view.animate().scaleX(sc);
@@ -97,7 +99,7 @@ public class SplashDownloader extends Thread implements MediaPlayer.OnCompletion
             my_view.animate().translationY(randInt(500,1500));
             tr = true;
         } else {
-            float sc = ((float)randInt(2,9)/10.f) + 1.f;
+            float sc = ((float)randInt(0, 20)/20.f) + 1.0f;
             my_view.animate().scaleX(sc);
             my_view.animate().scaleY(sc);
             my_view.animate().rotationX(randInt(-1, 1));
