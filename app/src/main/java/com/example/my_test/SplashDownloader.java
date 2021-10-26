@@ -20,8 +20,7 @@ public class SplashDownloader extends Thread implements MediaPlayer.OnCompletion
     View my_view = null;
     boolean tr = false;
     MediaPlayer m_player = null;
-    Point vSize = null;
-    final static double best_rate = 2280.0/1080.0;
+    Point v_size = null;
 
     public SplashDownloader(Context cnt, View view, int id_music, int id_pic) {
         my_view = view;
@@ -30,22 +29,23 @@ public class SplashDownloader extends Thread implements MediaPlayer.OnCompletion
 
         if(view != null) {
             Bitmap pic = BitmapFactory.decodeResource(cnt.getResources(), id_pic);
-            vSize = new Point();
+            final double best_aspect_ratio = (double)(pic.getWidth())/(double)(pic.getHeight());
+            v_size = new Point();
             WindowManager vWindow = ((Activity)cnt).getWindowManager();
             Display vDisplay = vWindow.getDefaultDisplay();
-            vDisplay.getRealSize(vSize);
-            if (best_rate < vSize.x/vSize.y) {
+            vDisplay.getRealSize(v_size);
+            if (best_aspect_ratio < v_size.x/v_size.y) {
                 // if needed max
-                // vSize.y = (int)(vSize.x/best_rate);
+                // v_size.y = (int)(v_size.x/best_aspect_ratio);
                 // if needed min
-                vSize.x = (int)(best_rate* vSize.y);
-            } else if (best_rate > vSize.x/vSize.y) {
+                v_size.x = (int)(best_aspect_ratio * v_size.y);
+            } else if (best_aspect_ratio > v_size.x/v_size.y) {
                 // if needed max
-                //vSize.x = (int)(best_rate* vSize.y);
+                // v_size.x = (int)(best_aspect_ratio * v_size.y);
                 // if needed min
-                vSize.y = (int)(vSize.x/best_rate);
+                v_size.y = (int)(v_size.x/best_aspect_ratio);
             }
-            Bitmap scaled_pic = Bitmap.createScaledBitmap(pic, vSize.x, vSize.y, true);
+            Bitmap scaled_pic = Bitmap.createScaledBitmap(pic, v_size.x, v_size.y, true);
             ((ImageView)view).setImageBitmap(scaled_pic);
         }
     }
