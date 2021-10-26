@@ -21,6 +21,7 @@ public class SplashDownloader extends Thread implements MediaPlayer.OnCompletion
     boolean tr = false;
     MediaPlayer m_player = null;
     Point vSize = null;
+    final static double best_rate = 2280.0/1080.0;
 
     public SplashDownloader(Context cnt, View view, int id_music, int id_pic) {
         my_view = view;
@@ -32,7 +33,18 @@ public class SplashDownloader extends Thread implements MediaPlayer.OnCompletion
             vSize = new Point();
             WindowManager vWindow = ((Activity)cnt).getWindowManager();
             Display vDisplay = vWindow.getDefaultDisplay();
-            vDisplay.getRealSize(vSize);//getSize(vSize);
+            vDisplay.getRealSize(vSize);
+            if (best_rate < vSize.x/vSize.y) {
+                // if needed max
+                // vSize.y = (int)(vSize.x/best_rate);
+                // if needed min
+                vSize.x = (int)(best_rate* vSize.y);
+            } else if (best_rate > vSize.x/vSize.y) {
+                // if needed max
+                //vSize.x = (int)(best_rate* vSize.y);
+                // if needed min
+                vSize.y = (int)(vSize.x/best_rate);
+            }
             Bitmap scaled_pic = Bitmap.createScaledBitmap(pic, vSize.x, vSize.y, true);
             ((ImageView)view).setImageBitmap(scaled_pic);
         }
@@ -83,11 +95,11 @@ public class SplashDownloader extends Thread implements MediaPlayer.OnCompletion
         my_view.animate().setDuration(randInt(8000, 10000));
         my_view.animate().scaleX(sc);
         my_view.animate().scaleY(sc);
-        my_view.animate().rotationX(randInt(0, 0));
-        my_view.animate().rotationY(randInt(0, 0));
-        my_view.animate().rotation(randInt(0, 0));
-        my_view.animate().translationX(randInt(0, 0));
-        my_view.animate().translationY(randInt(0, 0));
+        my_view.animate().rotationX(randInt(-1, 1));
+        my_view.animate().rotationY(randInt(-1, 1));
+        my_view.animate().rotation(randInt(-1, 1));
+        my_view.animate().translationX(randInt(-1, 1));
+        my_view.animate().translationY(randInt(-1, 1));
 
         my_view.animate().withEndAction(new Runnable() {
             @Override
