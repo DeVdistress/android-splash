@@ -54,26 +54,42 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/progressAsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/progressBar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-30dp"
+            android:text="0MB / 0MB"
+            android:textStyle="bold" />
+
+        <TextView
             android:id="@+id/progressAsFraction"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@id/progressBar"
+            android:layout_alignBottom="@+id/progressBar"
             android:layout_centerHorizontal="true"
+            android:layout_marginBottom="-30dp"
             android:text="0MB / 0MB" />
 
         <TextView
             android:id="@+id/progressAverageSpeed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/progressBar"
-            android:layout_alignLeft="@+id/progressBar" />
+            android:layout_alignLeft="@id/imageView"
+            android:layout_alignBottom="@+id/progressBar"
+            android:layout_marginLeft="100dp"
+            android:layout_marginBottom="-30dp" />
+
 
         <TextView
             android:id="@+id/progressTimeRemaining"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/progressBar"
-            android:layout_alignRight="@+id/progressBar" />
+            android:layout_alignRight="@id/imageView"
+            android:layout_alignBottom="@+id/progressBar"
+            android:layout_marginRight="100dp"
+            android:layout_marginBottom="-30dp" />
     </RelativeLayout>
 </LinearLayout>
 
