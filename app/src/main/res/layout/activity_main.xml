@@ -1,94 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <RelativeLayout
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1">
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
 
-        <ImageView
-            android:id="@+id/imageView"
+    <Button
+        android:id="@+id/button_stp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="stop" />
+
+    <Button
+        android:id="@+id/button_rst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/button_stp"
+        android:layout_marginRight="100dp"
+        android:text="reset" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="3">
+
+        <Space
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerCrop" />
-        <!-- android:scaleType="fitCenter" /> -->
-        <!-- android:adjustViewBounds="true" -->
-        <!-- app:srcCompat="@drawable/tfa" /> -->
+            android:layout_weight="1" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="stop" />
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyleHorizontal"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="270dp"
-            android:layout_marginRight="150dp"
-            android:alpha="0.95"
-            android:background="@android:color/transparent"
-            android:indeterminateTintMode="src_atop"
-            android:progressBackgroundTint="#ffffff"
-            android:progressTint="#00b7ff"
-            android:scaleY="5" />
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="2.4">
 
-        <TextView
-            android:id="@+id/progressAsPercentage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/progressBar"
-            android:layout_alignParentBottom="false"
-            android:layout_centerHorizontal="true"
-            android:text="0%"
-            android:textStyle="bold" />
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="150dp"
+                android:layout_marginRight="150dp"
+                android:alpha="0.95"
+                android:background="@android:color/transparent"
+                android:indeterminateTintMode="src_atop"
+                android:progressBackgroundTint="#ffffff"
+                android:progressTint="#00b7ff"
+                android:scaleY="5" />
 
-        <TextView
-            android:id="@+id/progressAsText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/progressBar"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="-30dp"
-            android:text="0MB / 0MB"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/progressAsPercentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/progressBar"
+                android:layout_alignParentBottom="false"
+                android:layout_centerHorizontal="true"
+                android:text="0%"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/progressAsFraction"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/progressBar"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="-30dp"
-            android:text="0MB / 0MB" />
+            <TextView
+                android:id="@+id/progressAsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/progressBar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-30dp"
+                android:text="0MB / 0MB"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/progressAverageSpeed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/imageView"
-            android:layout_alignBottom="@+id/progressBar"
-            android:layout_marginLeft="100dp"
-            android:layout_marginBottom="-30dp" />
+            <TextView
+                android:id="@+id/progressAsFraction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/progressBar"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="-30dp"
+                android:text="0MB / 0MB" />
 
+            <TextView
+                android:id="@+id/progressAverageSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignBottom="@+id/progressBar"
+                android:layout_marginLeft="100dp"
+                android:layout_marginBottom="-30dp" />
 
-        <TextView
-            android:id="@+id/progressTimeRemaining"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignRight="@id/imageView"
-            android:layout_alignBottom="@+id/progressBar"
-            android:layout_marginRight="100dp"
-            android:layout_marginBottom="-30dp" />
-    </RelativeLayout>
-</LinearLayout>
+            <TextView
+                android:id="@+id/progressTimeRemaining"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignBottom="@+id/progressBar"
+                android:layout_marginRight="100dp"
+                android:layout_marginBottom="-30dp" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>
+
 
 

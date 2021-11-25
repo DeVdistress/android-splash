@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity  {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         my_pr = findViewById(R.id.progressBar);
         my_text = findViewById(R.id.progressAsPercentage);
-        btn = findViewById(R.id.button);
+        btn = findViewById(R.id.button_stp);
 
         btn.setOnClickListener( new Button.OnClickListener() {
                 @Override
