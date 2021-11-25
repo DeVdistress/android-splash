@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.os.Build;
@@ -30,7 +31,8 @@ public class MainActivity extends AppCompatActivity  {
     boolean was_started = false;
     ProgressBar my_pr = null;
     TextView my_text = null;
-    Button btn = null;
+    Button btn_1 = null;
+    Button btn_2 = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,15 +51,25 @@ public class MainActivity extends AppCompatActivity  {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         my_pr = findViewById(R.id.progressBar);
         my_text = findViewById(R.id.progressAsPercentage);
-        btn = findViewById(R.id.button_stp);
-
-        btn.setOnClickListener( new Button.OnClickListener() {
+        btn_1 = findViewById(R.id.button_stp);
+        btn_1.setOnClickListener( new Button.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if(splash == null)
                         startSplash();
                     else
                         stopSplash();
+                }
+            });
+
+        btn_2 = findViewById(R.id.button_rst);
+        btn_2.setOnClickListener( new Button.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = getIntent();
+                    finish();
+                    startActivity(intent);
+                    overridePendingTransition(0, 0);
                 }
             });
 
@@ -131,7 +143,7 @@ public class MainActivity extends AppCompatActivity  {
         if (splash == null && was_started) {
             splash = new SplashDownloader(this, findViewById(R.id.imageView), R.raw.ui_intro_splash_screen, R.drawable.jurassic);
             splash.start();
-            btn.setText("stop");
+            btn_1.setText("stop");
         }
 
     }
@@ -140,7 +152,7 @@ public class MainActivity extends AppCompatActivity  {
         if (splash != null && was_started) {
             splash.stopIt();
             splash = null;
-            btn.setText("start");
+            btn_1.setText("start");
         }
     }
 
